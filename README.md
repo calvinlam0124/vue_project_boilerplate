@@ -46,3 +46,9 @@ module.exports = {
 	...
 }
 ```
+
+edit src/main.js
+```js
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+```
