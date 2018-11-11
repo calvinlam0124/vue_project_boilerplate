@@ -21,3 +21,28 @@ mkdir -p src/components/TemplateOne
 vim src/components/TEmplateOne/ContentOne.vue
 vim src/router/index.js
 ```
+
+### add bootstrap
+ref: https://guahsu.io/2017/12/vue-cli-webpack-pug-scss-bootstrap4/
+```sh
+npm install --save bootstrap
+npm install --save jquery
+npm install --save popper.js
+```
+
+edit build/webpack.base.conf.js
+```js
+const webpack = require('webpack')
+module.exports = {
+  ...
+  // 新增plugins
+  plugins: [
+    new webpack.ProvidePlugin({
+        '$': "jquery",
+        'jQuery': "jquery",
+        'Popper': 'popper.js'
+    })
+  ],
+	...
+}
+```
